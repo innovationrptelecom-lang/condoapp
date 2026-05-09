@@ -1,0 +1,37 @@
+{
+  "name": "condominium-app-auth",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.0",
+    "next": "14.2.3",
+    "next-auth": "^4.24.5",
+    "postcss": "^8.4.31",
+    "react": "18.3.0",
+    "react-dom": "18.3.0",
+    "tailwindcss": "^3.4.4",
+    "@prisma/client": "^5.14.0",
+    "socket.io-client": "^4.7.5",
+    "react-hot-toast": "^2.4.1",
+    "next-connect": "0.12.2",
+    "multer": "^2.0.3",
+    "socket.io": "^4.7.5",
+    "@aws-sdk/client-s3": "^3.535.0",
+    "exceljs": "^4.3.0",
+    "jspdf": "^2.5.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.14.0"
+  }
+}
