@@ -1,0 +1,76 @@
+diff --git a/pages/_app.js b/pages/_app.js
+index 1234567..89abcde 100644
+--- a/pages/_app.js
++++ b/pages/_app.js
+@@
+-import "@/styles/globals.css";
+-import { Toaster } from "react-hot-toast";
+-
+-<Toaster position="top-right" />          /* ← JSX fora do return! */
+-
+-function MyApp({ Component, pageProps }) {
+-  return (
+-      <Component {...pageProps} />
+-  );
+-}
++import "@/styles/globals.css";
++import { Toaster } from "react-hot-toast";
++
++export default function MyApp({ Component, pageProps }) {
++  return (
++    <>
++      <Toaster position="top-right" />
++      <Component {...pageProps} />
++    </>
++  );
++}
+ 
+-export default MyApp;
+diff --git a/pages/chamados/index.js b/pages/chamados/index.js
+index 1111111..2222222 100644
+--- a/pages/chamados/index.js
++++ b/pages/chamados/index.js
+@@
+-import useSWR
+-import useSWR from 'swr'
+-import { ... } from 'react'
++import useSWR from "swr";
++import { useState, useEffect } from "react";
++
+ import Layout from "@/components/Layout";
+ 
+ function Chamados() {
+   const { data, error } = useSWR("/api/chamados", fetcher);
+diff --git a/components/Layout.js b/components/Layout.js
+new file mode 100644
+--- /dev/null
++++ b/components/Layout.js
+@@
++export default function Layout({ children }) {
++  return (
++    <main className="container mx-auto px-4 py-6">{children}</main>
++  );
++}
+diff --git a/package.json b/package.json
+index deadbeef..feedbabe 100644
+--- a/package.json
++++ b/package.json
+@@
+   "dependencies": {
+     "next": "14.2.35",
++    "swr": "^2.2.0",
+     "react": "^18.3.1",
+     "react-dom": "^18.3.1",
+-    "uuid": "^8.3.2"
++    "uuid": "^11.0.0"
+   },
+   "devDependencies": {
+-    "rimraf": "^2.7.1"
++    "rimraf": "^5.0.1"
+   },
+   "scripts": {
+-    "build": "next build",
++    "build": "next build",
+     "start": "next start"
+   }
+ }
